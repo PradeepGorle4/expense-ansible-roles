@@ -34,11 +34,14 @@
   ansible.builtin.template:
     src: /home/ec2-user/expense-ansible-roles/roles/frontend/templates/expense.conf.j2
     dest: /etc/nginx/default.d/expense.conf
-  notify:
-  - Restart nginx # This is the name of handler
 
-# Here we only want to restart nginx only when changes are done to config file.
-# use handlers to notify the restart nginx task if only the change in config file happens
+- name: Restart nginx 
+  ansible.builtin.service:
+    name: nginx
+    state: restarted # This is the name of handler
+
+  # Here we only want to restart nginx only when changes are done to config file.
+  # use handlers to notify the restart nginx task if only the change in config file happens
 # Here, if the above task is yellow, like if the config content is copied newly or changed, it runs in yellow and there by notifying the
-# handler named Restart nginx which will restart the nginx
+# handler named Restart nginx which will restart the
 
