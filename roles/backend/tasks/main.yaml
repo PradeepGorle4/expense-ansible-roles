@@ -55,7 +55,7 @@
     name: all
     login_user: "{{ mysql_user }}"
     login_password: "{{ mysql_password }}"
-    login_host: mysql.pradeepdevops.online
+    login_host: "{{ mysql_host }}"
     target: /app/schema/backend.sql
 
 - name: Restart backend service and Reload the daemon
