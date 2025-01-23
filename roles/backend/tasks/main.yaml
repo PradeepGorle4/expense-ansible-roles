@@ -36,6 +36,9 @@
   community.general.npm:
     path: /app
 
+# Since this file has variable, It is placed in templates folder with ginga format- service file with j2 extention. and use template module
+# If no variables, create files folder and place the service file there since copy modules checks in files folder by default
+
 - name: Copy backend service
   ansible.builtin.template: # instead of.copy we used .template as this will search in templates folder for the service file
     src: /home/ec2-user/expense-ansible-roles/roles/backend/templates/backend.service.j2
