@@ -36,7 +36,7 @@
   community.general.npm:
     path: /app
 
-# Since this file has variable, It is placed in templates folder with ginga format- service file with j2 extention. and use template module
+# Since this file has variable, It is placed in templates folder with jinga2 format- service file with j2 extention. and use template module.
 # If no variables, create files folder and place the service file there since copy modules checks in files folder by default
 
 - name: Copy backend service
