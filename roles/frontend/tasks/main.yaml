@@ -12,7 +12,7 @@
 - name: include role from common
   include_role:
     name: common
-    include_from: main
+    tasks_from: main
 
 # - name: Removing default html directory
 #   ansible.builtin.file:
